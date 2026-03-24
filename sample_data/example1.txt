@@ -1,0 +1,1 @@
+Retrieval-Augmented Generation is a system design pattern that combines document retrieval with large language model generation. Instead of relying only on the model’s internal memory, the system first retrieves relevant external context and then uses that context to generate a grounded response.
