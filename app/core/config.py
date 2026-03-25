@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     chunk_size: int = 500
     chunk_overlap: int = 100
 
+    database_url: str = "postgresql://postgres:Postgres@localhost:5432/rag_ai_db"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
