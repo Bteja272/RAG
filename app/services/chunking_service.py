@@ -51,6 +51,7 @@ class TextChunkingService:
         for index, chunk in enumerate(chunks):
             records.append(
                 {
+                    "chunk_id": f"{document_id}_{page_number or 0}_{index}",
                     "document_id": document_id,
                     "source": source,
                     "page_number": page_number,
