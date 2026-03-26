@@ -6,6 +6,10 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     environment: str = "development"
 
+    openai_api_key: str | None = None
+    llm_model_name: str = "gpt-4o-mini"
+    retrieval_top_k: int = 3    
+
     chunk_size: int = 500
     chunk_overlap: int = 100
 
