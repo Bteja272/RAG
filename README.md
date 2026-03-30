@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 Most LLMs generate answers from their training data alone — which leads to hallucinations and outdated responses. This system solves that by combining **semantic retrieval** with **local LLM generation**:
 
@@ -24,7 +24,7 @@ This architecture mirrors what production AI platforms like Perplexity, Notion A
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -38,7 +38,7 @@ This architecture mirrors what production AI platforms like Perplexity, Notion A
 
 ---
 
-## ✨ Features
+## Features
 
 - **Document ingestion** — supports `.txt` and `.pdf` files
 - **Text preprocessing** — cleaning, normalization, and smart chunking
@@ -52,7 +52,7 @@ This architecture mirrors what production AI platforms like Perplexity, Notion A
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -117,7 +117,7 @@ Raw Document (PDF / TXT)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 rag-ai-system/
@@ -157,7 +157,7 @@ rag-ai-system/
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 
@@ -239,7 +239,7 @@ Interactive docs: `http://localhost:8000/docs`
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### `POST /ingest`
 
@@ -305,7 +305,7 @@ curl -X POST http://localhost:8000/query \
 
 ---
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 | Limitation | Notes |
 |---|---|
@@ -317,7 +317,7 @@ curl -X POST http://localhost:8000/query \
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] **Hybrid search** — combine dense vector search with BM25 keyword search for better recall
 - [ ] **Cross-encoder reranking** — rerank retrieved chunks for improved answer relevance
@@ -330,7 +330,7 @@ curl -X POST http://localhost:8000/query \
 
 ---
 
-## 📖 Key Concepts
+## Key Concepts
 
 **Why RAG instead of fine-tuning?**  
 Fine-tuning embeds knowledge into model weights — it's expensive, slow to update, and prone to catastrophic forgetting. RAG keeps knowledge in an external store that can be updated in real time without retraining the model.
@@ -346,13 +346,13 @@ Running the LLM locally means zero API costs, full data privacy, and no rate lim
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss the proposed change.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
 
