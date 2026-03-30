@@ -1,26 +1,35 @@
+import time
+
 from app.core.config import settings
+from app.core.logger import logger
+from app.services.llm_service import LLMService
 from app.services.prompt_service import PromptService
 from app.services.retrieval_service import RetrievalService
-from app.services.llm_service import LLMService
 
 
 class RAGService:
     @staticmethod
     def query(query: str) -> dict:
-        # Step 1 — retrieve context
+        start_time = time.time()
+
         chunks = RetrievalService.retrieve(
             query=query,
             top_k=settings.retrieval_top_k,
         )
 
-        # Step 2 — build prompt
         prompt = PromptService.build_prompt(query=query, context_chunks=chunks)
-
-        # Step 3 — generate response
         answer = LLMService.generate_response(prompt)
+
+        latency = round(time.time() - start_time, 3)
+
+        logger.info("Query processed")
+        logger.info(f"Query: {query}")
+        logger.info(f"Retrieved chunks: {len(chunks)}")
+        logger.info(f"Latency: {latency}s")
 
         return {
             "query": query,
             "answer": answer,
             "sources": chunks,
+            "latency_seconds": latency,
         }

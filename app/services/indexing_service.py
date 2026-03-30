@@ -1,6 +1,7 @@
 from app.db.models import Document, DocumentChunk
 from app.db.session import SessionLocal
 from app.services.embedding_service import EmbeddingService
+from app.core.logger import logger
 
 
 class IndexingService:
